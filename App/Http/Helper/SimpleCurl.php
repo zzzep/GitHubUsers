@@ -48,8 +48,6 @@ class SimpleCurl {
         foreach ($headers as $key => $value) {
             $header[] = $key . ": " . $value;
         }
-        $header[] = "Accept: application/vnd.github.v3+json";
-        $header[] = "User-Agent: GfechioGitHubUser";
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $header);
         return $this;
     }
