@@ -3,10 +3,10 @@
 
 urls:
 - /api/users/USER
-    - Example: http://localhost/api/users/testeZepp
+    - Example: http://localhost/GitHubUsers/api/users/testeZepp
 
 - /api/users/USER/repos
-    - Example: http://localhost/api/users/testeZepp/repos
+    - Example: http://localhost/GitHubUsers/api/users/testeZepp/repos
 
 -  Dependencies
     - Docker
