@@ -19,9 +19,10 @@ class Request {
     protected function callCurl($url) {
         $curl = new SimpleCurl();
         $agents = [
-            "Accept: application/vnd.github.v3+json",
-            "User-Agent: " . env("GITHUB_NAME")
+            "Accept" => "application/vnd.github.v3+json",
+            "User-Agent" => env("GITHUB_NAME")
         ];
+		$header = array_merge($_SESSION, $agents);
         $response = $curl->init()->setHeader(array_merge($_SESSION, $agents))->response($url);
         if (strpos($response, "Please make sure your request has a User-Agent header") != false) {
             throw new \Exception("Git Hub Header not informed");
