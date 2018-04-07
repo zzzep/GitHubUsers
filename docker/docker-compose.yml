@@ -1,0 +1,15 @@
+version: '2'
+services:
+  gfechio_github_api:
+    build: ./   
+    container_name: gfechio_github_api
+    networks:
+      - docker-localhost
+    volumes:
+      - ../:/var/www/html/GitHubUsers
+    ports:
+      - 80:80
+      - 22:22
+    tty: true
+networks:
+  docker-localhost:
